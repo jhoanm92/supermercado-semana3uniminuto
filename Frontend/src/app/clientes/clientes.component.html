@@ -1,0 +1,34 @@
+<div class="contenido-principal"  *ngIf="components == false">
+
+    <h1>Empleados</h1>
+
+    <select (change)="filtrarPorCargo($event)">
+        <option value="">Todos los cargos</option>
+        <option *ngFor="let cargo of cargos" [value]="cargo.name">{{ cargo.name }}</option>
+    </select>
+     <table>
+        <thead>
+            <tr>
+                <th>Nombre Empleado</th>
+                <th>Cargo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let empleado of filtrarEmpleadosPorCargo()">
+                <tr>
+                    <td>{{ empleado.name }}</td>
+                    <td>{{ empleado.role.name }}</td>
+                    <td>
+                        <input class="btnEditar" type="button" (click)="EditarEmpleado(empleado.id, empleado.name, empleado.role.name)" value="Editar">
+                        <input class="btnEliminar" type="button" (click)="EliminarEmpleado(empleado.id)" value="Eliminar">
+                    </td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+  
+</div>
+<div   *ngIf="components == true">
+    <app-editar  [ide]="this.idempleado" [nombre]="this.nombreEmpelado"  />
+</div>

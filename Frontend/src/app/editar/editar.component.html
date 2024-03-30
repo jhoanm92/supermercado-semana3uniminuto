@@ -1,0 +1,28 @@
+
+
+<div class="contenedor">
+       
+    <div class="contenido-principal">
+        <!-- Contenido principal -->
+        <h1>Editar Empleado</h1>
+        
+        <div class="formulario">
+            <form id="form" action="submit">
+                <h3>Detalles del empleado</h3>
+                    <div class="info-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" #name [(ngModel)]="nombre" > <br>
+                        <label for="telefono">Cargo</label>
+                        <select name="Cargos" id="cargos"  [(ngModel)]="selectedOption">
+                            <option *ngFor="let item of data" [value]="item.id">{{ item.name }}</option>
+                        </select>
+                        
+                        <input class="btn-input" type="submit" (click)="EditarEmpleado()" value="Editar">
+                    </div>
+            </form>
+    
+        </div>
+    </div>
+    
+</div>
+
