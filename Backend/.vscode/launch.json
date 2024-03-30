@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "MarketApplication",
+            "request": "launch",
+            "mainClass": "com.supermercado.market.MarketApplication",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MarketApplication<market>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.supermercado.market.MarketApplication",
+            "projectName": "market",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
